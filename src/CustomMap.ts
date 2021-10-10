@@ -1,3 +1,5 @@
+// You will need a script tag with an api key for this class to work
+// <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNLrJhOMz6idD05pzfn5lhA-TAw-mAZCU"></script>
 interface Mappable {
   location: {
     lat: number;
@@ -14,12 +16,19 @@ export default class CustomMap {
     });
   }
   addMarker(mappable: Mappable) {
-    new google.maps.Marker({
+    const marker = new google.maps.Marker({
       map: this.googleMap,
       position: {
         lat: mappable.location.lat,
         lng: mappable.location.lat,
       },
+    });
+
+    marker.addListener("click", () => {
+      const infoWindow = new google.maps.InfoWindow({
+        content: "HI there",
+      });
+      infoWindow.open(this.googleMap, marker);
     });
   }
 }
