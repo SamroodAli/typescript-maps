@@ -1,9 +1,9 @@
 import faker from "faker";
 import { Mappable } from "./CustomMap";
 export default class Company implements Mappable {
-  companyName: string;
-  catchPhrase: string;
-  location: {
+  readonly companyName: string;
+  readonly catchPhrase: string;
+  readonly location: {
     lat: number;
     lng: number;
   };

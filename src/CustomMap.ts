@@ -1,7 +1,7 @@
 // You will need a script tag with an api key for this class to work
 // <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNLrJhOMz6idD05pzfn5lhA-TAw-mAZCU"></script>
 export interface Mappable {
-  location: {
+  readonly location: {
     lat: number;
     lng: number;
   };
