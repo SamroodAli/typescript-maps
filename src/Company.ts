@@ -1,5 +1,4 @@
 import faker from "faker";
-
 export default class Company {
   companyName: string;
   catchPhrase: string;
